@@ -66,6 +66,7 @@ public class API_Methods {
                 } else {
                     response = given()
                             .spec(spec)
+                            .contentType(ContentType.JSON)
                             .when()
                             .get(fullPath);
                 }
@@ -89,6 +90,7 @@ public class API_Methods {
             case "DELETE":
                 response = given()
                         .spec(spec)
+                        .contentType(ContentType.JSON)
                         .when()
                         .delete(fullPath);
                 break;
@@ -246,6 +248,7 @@ public class API_Methods {
 
             // ID oluşturma
             addedId = API_Methods.addedId(pp2, folder, idKey);
+
         }
     }
 

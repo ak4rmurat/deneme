@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import config_Requirements.ConfigReader;
 import io.cucumber.java.en.Given;
+import org.asynchttpclient.Response;
 import utilities.API_Utilities.API_Methods;
 
 import static org.junit.Assert.assertEquals;
@@ -9,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class API_Stepdefinitions {
 
     String requestBody;
+    Response response;
 
     @Given("The api user sets {string} path parameters.")
     public void the_api_user_sets_path_parameters(String pathParam) {
@@ -17,6 +19,9 @@ public class API_Stepdefinitions {
         } else {
             API_Methods.pathParam(pathParam + "/" + API_Methods.addedId);
         }
+
+
+
 
     }
 
@@ -27,6 +32,10 @@ public class API_Stepdefinitions {
         } else {
             API_Methods.sendRequest(httpMethod, requestBody);
         }
+
+
+
+
     }
 
     @Given("The api user verifies that the status code is {int}.")
